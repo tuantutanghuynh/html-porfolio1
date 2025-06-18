@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chiêm Tinh Huyền Bí</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #0d0d1a, #1a004d);
+      color: #e0e0ff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #6a5acd;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      background-color: #000033;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #330066;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #555;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #6a5acd;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔮 Chiêm Tinh Huyền Bí</h1>
+  <p>Hãy chọn cung hoàng đạo của bạn để khám phá điều bí ẩn hôm nay:</p>
+
+  <select id="zodiac">
+    <option value="">-- Chọn cung --</option>
+    <option value="Bạch Dương">♈ Bạch Dương</option>
+    <option value="Kim Ngưu">♉ Kim Ngưu</option>
+    <option value="Song Tử">♊ Song Tử</option>
+    <option value="Cự Giải">♋ Cự Giải</option>
+    <option value="Sư Tử">♌ Sư Tử</option>
+    <option value="Xử Nữ">♍ Xử Nữ</option>
+    <option value="Thiên Bình">♎ Thiên Bình</option>
+    <option value="Bọ Cạp">♏ Bọ Cạp</option>
+    <option value="Nhân Mã">♐ Nhân Mã</option>
+    <option value="Ma Kết">♑ Ma Kết</option>
+    <option value="Bảo Bình">♒ Bảo Bình</option>
+    <option value="Song Ngư">♓ Song Ngư</option>
+  </select>
+  <br>
+  <button onclick="showHoroscope()">Xem dự đoán 🔮</button>
+
+  <div id="result"></div>
+
+  <script>
+    const horoscopes = {
+      "Bạch Dương": "Hôm nay là thời điểm lý tưởng để bắt đầu điều mới mẻ. Hãy dũng cảm tiến lên!",
+      "Kim Ngưu": "Sự kiên định của bạn sẽ được đền đáp. Hãy kiên nhẫn và tin vào quá trình.",
+      "Song Tử": "Sự linh hoạt giúp bạn xoay chuyển tình huống bất ngờ. Cẩn thận với tin đồn!",
+      "Cự Giải": "Trực giác mách bảo đúng đấy. Đừng ngần ngại lắng nghe trái tim.",
+      "Sư Tử": "Thời gian tỏa sáng đã đến! Hãy mạnh dạn thể hiện bản thân.",
+      "Xử Nữ": "Chi tiết nhỏ có thể làm nên điều lớn. Tập trung và đừng bỏ lỡ cơ hội.",
+      "Thiên Bình": "Một ngày hài hòa đang chờ bạn. Nhưng nhớ giữ vững lập trường.",
+      "Bọ Cạp": "Đam mê dẫn lối, nhưng đừng để cảm xúc chi phối tất cả.",
+      "Nhân Mã": "Hành trình mới đang gọi tên bạn. Hãy chuẩn bị để khám phá!",
+      "Ma Kết": "Sự chăm chỉ sẽ mang lại kết quả rõ ràng. Kiên trì nhé!",
+      "Bảo Bình": "Ý tưởng điên rồ có thể lại là giải pháp sáng tạo nhất.",
+      "Song Ngư": "Bạn cần lắng nghe sâu hơn – cả người khác lẫn chính mình."
+    };
+
+    function showHoroscope() {
+      const zodiac = document.getElementById("zodiac").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!zodiac) {
+        resultDiv.innerHTML = "<p>🔁 Vui lòng chọn một cung hoàng đạo trước nhé!</p>";
+        return;
+      }
+
+      resultDiv.innerHTML = `<h2>${zodiac}</h2><p>${horoscopes[zodiac]}</p>`;
+    }
+  </script>
+
+</body>
+</html>
